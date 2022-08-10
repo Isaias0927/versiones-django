@@ -1,17 +1,15 @@
-<html lang="es">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>{% block titulo %} PRINCIPAL{% endblock%}</title>
-
-    {%load static%}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="../../static/inicio/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
             
-<link href="{%static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
-<link href="{%static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
-<link href="{%static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
-<link href="{%static 'inicio/css/icons.css'%}" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
@@ -46,49 +44,38 @@
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/application.js"></script>
-
+   
 </head>
 <body>
-    <!--Menú-->
-    <div class="mb-4">
-
-      <nav class="nav justify-content-center p-4 navbar navbar-blue bg-blue" style="background-color: #bceeff; ">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{%url 'Cursos' %}">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'Principal' %}">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{%url 'Contacto' %}">Contacto</a>
-        </li>
-      </nav>
-
+    <div class="nav justify-content-center p-4 navbar navbar-blue bg-blue" style="background-color: #bceeff;">
+        <nav class="navegacion-principal">
+            <a href="{% url 'Cursos' %}">Principal</a>
+            <a href="{% url 'Principal' %}">Cursos</a>
+            <a href="{% url 'Contacto' %}">Contacto</a>
+        </nav>
     </div>
 
-  <!--Barra de navegación-->
-    <div class="m-4 breadcrumb-line">
-      <ul class="breadcrumb">
-          <a href="{%url 'Principal' %}">
-              {% if request.path == '/' %}
-                  Principal
-              {%else%}
-                  Principal{{request.path}}
-              {%endif%}
-          </a>
-      </ul>
+     <!--Barra de navegación-->
+     <div class="m-4 breadcrumb-line">
+        <ul class="breadcrumb">
+            <a href="{%url 'Principal' %}">
+                {% if request.path == '/' %}
+                    Principal
+                {%else%}
+                    Principal{{request.path}}
+                {%endif%}
+            </a>
+        </ul>
     </div>
-  <!--Barra de navegación-->
+    <!--Barra de navegación-->
 
-      {%block encabezado%}
+    {% block encabezado %}
 
-      {%endblock%}
-    <!--Contenido-->
+    {% endblock%}
+   
 
-      {% block contenido %}
-      
-      {% endblock %}
+    {% block contenido %}
 
-
+    {% endblock%}
 </body>
 </html>

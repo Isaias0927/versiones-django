@@ -1,24 +1,9 @@
-from django.shortcuts import get_object_or_404, render
-
+from django.shortcuts import render, get_object_or_404
+from .models import Cursos
 from cursos.forms import cursosForms
 
-# from cursos.forms import cursosForms
-from .models import Cursos
-
 # Create your views here.
-
 def cursos(request):
-    # if request.method == 'POST':
-    #     form = cursosForms(request.POST)
-    #     if form.is_valid(): #Si los datos recibidos son correctos
-    #         form.save() #inserta
-    #         comentarios=Cursos.objects.all()
-    #         return render(request,"registros/consultaContacto.html",
-    #         {'comentarios':comentarios})
-    # form = cursosForms()
-    # #Si algo sale mal se reenvian al formulario los datos ingresados
-    # return render(request,'cursos/principal.html',{'form': form}) 
-
     cursos=Cursos.objects.all()
     return render(request, "cursos/principal.html", {'cursos':cursos})
 #Indicamos el lugar donde se renderizará el resultado de esta vista

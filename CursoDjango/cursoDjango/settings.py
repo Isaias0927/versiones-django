@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0bbph9!gynm&n$+h3$404xk1-=yuqq$xr!!#rhn9hvtqa(5*oi'
+SECRET_KEY = 'django-insecure-dl2*fw5!exa8b07p=v)38q+^nubv*iym2@0@z6j5qys(@d0s11'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,9 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Principal',
+    'principal',
     'cursos.apps.CursosConfig',
-    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -129,19 +128,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Archivos fotográficos
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-#CKEDITOR
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar':'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['Styles', 'Format'],
-            [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight','JustifyBlock'],
-            ['Link', 'Unlink', 'Anchor' ],
-            ['Cut', 'Copy', 'Paste', 'PasteText', 'PastFromWord', '-', 'Undo', 'Redo' ],
-            ['Maximize' ],
-        ] 
-    }
-}
