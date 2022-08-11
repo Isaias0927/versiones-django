@@ -13,10 +13,10 @@
         <thead>
             <tr class="principal">
                 <th>Foto</th>
-                <th>Nombre del Alumno</th>
+                <th>Nombre</th>
+                <th>Curso</th>
                 <th>Email</th>
-                <th>Nombre del Curso</th>
-                <th>Detalles</th>
+                <th>Tiempo</th>
                 <th>Fecha</th>
             </tr>
         </thead> 
@@ -28,16 +28,16 @@
                         <img src="{{curso.imagen.url}}" alt="" width="120px" height="50px" class="img-media" >
                     </td>
                     <td class="text-semibold">{{curso.nombre}}</td>
-                    <td class="muted">{{curso.email}}</td>
                     <td class="muted">{{curso.curso}}</td>
+                    <td class="muted">{{curso.email}}</td>
                     <td class="muted">{{curso.tiempo}}</td>
                     <td class="muted">{{curso.fecha}}</td>
+                    <td class="text-center">
+                        <a href="{%url 'Eliminar' curso.i%}">Eliminar</a>
+                    </td>
                     
                     <td class="text-center">
                         <a href="{%url 'Editar' curso.i%}">Editar</a>
-                    </td>
-                    <td class="text-center">
-                        <a href="{%url 'Eliminar' curso.i%}">Eliminar</a>
                     </td>
                 </tr>
             {% endfor%}

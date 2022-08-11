@@ -8,62 +8,42 @@
       <h1>Formulario de contacto</h1>
         <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
 
-        <form>
-  
-          <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="well well-sm">
-                        <form class="form-horizontal" method="post">
-                            <fieldset>
-          
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8  mb-4">
-                                        <input id="name" name="name" type="text" placeholder="Nombre" class="form-control">
-                                    </div>
-                                </div>
-          
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                    <div class="col-md-8  mb-4">
-                                        <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
-                                    </div>
-                                </div>
-          
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                    <div class="col-md-8  mb-4">
-                                        <select id="curso" name="curso" type="text" placeholder="Curso" class="form-control">
-                                          <option selected>Selecciona un curso</option>
-                                          <option value="Base de datos">Base de datos</option>
-                                          <option value="Programación">Programación</option>
-                                          <option value="Ingles">Ingles</option>
-                                          <option value="Desarrollo web integral">Desarrollo web integral</option>
-                                          <option value="Dirección de equipos de alto rendimiento">Dirección de equipos de alto rendimiento</option>
-                                        </select>
-                                    </div>
-                                </div>
-          
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                    <div class="col-md-8  mb-4">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Comentario" rows="7"></textarea>
-                                    </div>
-                                </div>
-          
-                                <div class="form-group">
-                                    <div class="col-md-12 text-center  mb-4">
-                                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </form>
+          <form  method="post">       
+                <p>
+                  <label for="nombre" class="colocar_nombre">Nombre
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                </p>
+              
+                <p>
+                  <label for="email" class="colocar_email">Email
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="email" name="email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                </p>
+        
+                <p>
+                  <label for="asunto" class="colocar_asunto">Curso
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="curso" id="curso" required="obligatorio" placeholder="Cursos deseado">
+                </p>    
+              
+                <p>
+                  <label for="mensaje" class="colocar_mensaje">Comentario
+                    <span class="obligatorio">*</span>
+                  </label>                     
+                     <textarea name="comentario" class="texto_mensaje" id="comentario" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                </p>                    
+              
+                <button class="button" type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                <p class="aviso">
+                  <span class="obligatorio"> * </span>Todos los campos son obligatorios.
+                </p>          
+            
+          </form>
     </div>  
   </div>
 
