@@ -4,12 +4,12 @@
 {% block contenido %}
 <div class="principal">
 
-    <h1>CURSOS REGISTRADOS</h1>
+    <h1>BIENVENIDO AL PORTAL</h1>
         
-    <p>Estos son los cursos registrados</p>   
+    <p>El objetivo principal de este portal es mostrar los datos de los alumnos registrados por el usuario administrador y el curso que tomaran </p>   
 
     <!-- Tabla de Alumnos -->
-    <table class="table table-bordered tablestriped mt-4">   
+    <table class="principal">   
         <thead>
             <tr class="principal">
                 <th>Foto</th>
@@ -18,8 +18,6 @@
                 <th>Nombre del Curso</th>
                 <th>Detalles</th>
                 <th>Fecha</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
             </tr>
         </thead> 
         
@@ -34,13 +32,13 @@
                     <td class="muted">{{curso.curso}}</td>
                     <td class="muted">{{curso.tiempo}}</td>
                     <td class="muted">{{curso.fecha}}</td>
+                    
                     <td class="text-center">
                         <a href="{%url 'Editar' curso.i%}">Editar</a>
                     </td>
                     <td class="text-center">
                         <a href="{%url 'Eliminar' curso.i%}">Eliminar</a>
                     </td>
-                    
                 </tr>
             {% endfor%}
         </tbody>
